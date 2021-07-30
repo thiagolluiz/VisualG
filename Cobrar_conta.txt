@@ -1,0 +1,26 @@
+Algoritmo "Cobrar_Conta"
+
+Var
+
+Vtotal, Vpago : real
+
+Inicio
+
+escreval ("--- Restauran do Capiroto Azul ---")
+escreva ("Valor da conta = ")
+leia (Vtotal)
+
+     enquanto Vtotal > 0 faca
+              Escreva ("Pagar = ")
+              leia (Vpago)
+              Vtotal <- Vtotal - Vpago
+                     se Vtotal < 0 entao
+                        escreval ("Troco = ", Vtotal * -1)
+                     senao
+			escreval ("Valor restante = ", Vtotal)
+                     fimse
+     fimenquanto
+     
+escreva ("--- Volte sempre, seu dinheiro é sempre bem-vido! ---")
+
+Fimalgoritmo

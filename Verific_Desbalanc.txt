@@ -1,0 +1,142 @@
+Algoritmo "carteia_de_investimentos"
+
+
+Var
+
+   cdb, acoes, imob, stock, reit, cdb2, acoes2, imob2, stock2, reit2, cdb3, acoes3, imob3, stock3, reit3, cdb4, acoes4, imob4, stock4, reit4, invest, fimdist, desb: real
+
+Inicio
+   escreval("--- Tranqueira Investimentos ---")
+   escreval("   ")
+   escreval("Se não quiser investeir em alguma das classes de investimentos digite '0'")
+   escreval("*** Os valores em REITs serão preenchidos com o que faltar para 100% ***")
+   escreval("   ")
+   
+   // Aplicando o percentual a ser investido
+   repita
+      reit <- -1
+      enquanto reit < 0 faca
+         escreval("Qual a porcentagem do seu investimento gostaria de aplicar em:")
+         escreva("CDB: ")
+         leia (cdb)
+         escreva("Mercado de ações: ")
+         leia (acoes)
+         escreva("Mercado imobiliario: ")
+         leia (imob)
+         escreva("STOCKs: ")
+         leia (stock)
+         escreval("   ")
+         reit <- 100 - cdb - acoes - imob - stock
+         se reit < 0 entao
+            escreval("*** A distribuição foi feita incorretamente, preencha novamente: ***")
+            escreval("*** Não se esqueça que os valores não podem ultrapassar 100% ***")
+            escreval("   ")
+         fimse
+      fimenquanto
+      
+//mostrar as distribuição aos clietes
+      escreval("A distribuição do seu investimento: ")
+      escreval("CDB: ",cdb," %")
+      escreval("Mercado de ações: ",acoes," %")
+      escreval("Mercado imobiliario: ",imob," %")
+      escreval("STOCKs: ",stock," %")
+      escreval("REITs: ",reit," %")
+      escreval("   ")
+      escreval("Podemos prosseguir: (digite: 1-sim ou 0-não) ")
+      leia(fimdist)
+      escreval("   ")
+   ate fimdist = 1
+
+//Requerir os valores aplicados atualmente
+   escreval("Qual é o valor do seu investimento já aplicado em:")
+   escreva("CDB: ")
+   leia (cdb2)
+   escreva("Mercado de ações: ")
+   leia (acoes2)
+   escreva("Mercado imobiliario: ")
+   leia (imob2)
+   escreva("STOCKs: ")
+   leia (stock2)
+   escreva("REITs: ")
+   leia (reit2)
+   escreval("   ")
+   invest <- (cdb2 + acoes2 + imob2 + stock2 + reit2)
+   escreval("Sua carteira de investimento tem = ", invest)
+   escreval("   ")
+   
+//Valores percentuais investidos
+   cdb3 <- (cdb2 / invest) * 100
+   acoes3 <- (acoes2 / invest) * 100
+   imob3 <- (imob2 / invest) * 100
+   stock3 <- (stock2 / invest) * 100
+   reit3 <- (reit2 / invest) * 100
+
+//Calculando diferencça entre investido e desejado
+   cdb4 <- cdb3 - cdb
+   se cdb4 < 0 entao
+      cdb4 <- cdb4 * (-1)
+   fimse
+   acoes4 <- acoes3 - acoes
+   se acoes4 < 0 entao
+      acoes4 <- acoes4 * (-1)
+   fimse
+   imob4 <- imob3 - imob
+   se imob4 < 0 entao
+      imob4 <- imob4 * (-1)
+   fimse
+   stock4 <- stock3 - stock
+   se stock4 < 0 entao
+      stock4 <- stock4 * (-1)
+   fimse
+   reit4 <- reit3 - reit
+   se reit4 < 0 entao
+      reit4 <- reit4 * (-1)
+   fimse
+
+   //Verificação do mais desbalanceada
+   desb <- 0
+   se desb < cdb4 entao
+      desb <- cdb4
+   fimse
+   se desb < acoes4 entao
+      desb <- acoes4
+   fimse
+   se desb < imob4 entao
+      desb <- imob4
+   fimse
+   se desb < stock4 entao
+      desb <- stock4
+   fimse
+   se desb < reit4 entao
+      desb <- reit4
+   fimse
+
+   //Informando ap cliente qual é a aplicação mais desbalanceada
+   //e qual a iferença percentual entre o aplicado e o desejado.
+   se desb = cdb4 entao
+      escreval("O investimento mais desbalancado é o CDB")
+      escreval("Com ", cdb4:2:2," % de diferença entre o pretendido e o aplicado.")
+      escreval("Entre em contato com um de nossos corretores para corrigir sua carteira de investimentos.")
+   fimse
+   se desb = acoes4 entao
+      escreval("O investimento mais desbalancado é o Mercado de Ações,")
+      escreval("Com ", acoes4:2:2," % de diferença entre o pretendido e o aplicado.")
+      escreval("Entre em contato com um de nossos corretores para corrigir sua carteira de investimentos.")
+   fimse
+   se desb = imob4 entao
+      escreval("O investimento mais desbalancado é o Mercado Imobiliário,")
+      escreval("Com ", imob4:2:2," % de diferença entre o pretendido e o aplicado.")
+      escreval("Entre em contato com um de nossos corretores para corrigir sua carteira de investimentos.")
+   fimse
+   se desb = stock4 entao
+      escreval("O investimento mais desbalancado é o STOCKs,")
+      escreval("com ", stock4:2:2," % de diferença entre o pretendido e o aplicado.")
+      escreval("Entre em contato com um de nossos corretores para corrigir sua carteira de investimentos.")
+   fimse
+   se desb = reit4 entao
+      escreval("O investimento mais desbalancado é o REITs,")
+      escreval("Com ", reit4:2:2," % de diferença entre o pretendido e o aplicado.")
+      escreval("Entre em contato com um de nossos corretores para corrigir sua carteira de investimentos.")
+   fimse
+
+Fimalgoritmo

@@ -1,0 +1,51 @@
+Algoritmo "GeradorDeCartelaBingo"
+
+Var
+bingo : vetor [0..4,0..4] de inteiro
+linha, coluna, numero: inteiro
+max, min: inteiro
+
+Inicio
+
+   // Gerando numeros aleatórios
+   para linha de 0 ate 4 faca
+      max <- 15
+      min <- 1
+      para coluna de 0 ate 4 faca
+         aleatorio min , max
+         leia (numero)
+
+         enquanto (numero = bingo[0,coluna]) ou(numero = bingo[1,coluna]) ou (numero = bingo[2,coluna]) ou(numero = bingo[3,coluna]) ou(numero = bingo[4,coluna]) faca
+              aleatorio min , max
+              leia (numero)
+         fimenquanto
+
+         bingo[linha,coluna] <- numero
+
+         min <- max + 1
+         max <- min + 14
+
+      fimpara
+   fimpara
+//    Fim para Gerando numeros aleatórios
+
+//  Escrevendo a Cartela
+   escreval("")
+   escreval("")
+   escreva ("| B  |  I  |  N  |  G  |  O  |")
+
+   bingo[2,2] <- 88
+
+   para linha de 0 ate 4 faca
+      escreval("")
+      para coluna de 0 ate 4 faca
+          se bingo[linha,coluna] < 10 entao
+             escreva (" 0" , bingo[linha,coluna]," |")
+          senao
+              escreva (" ",bingo[linha,coluna]," |")
+          fimse
+      fimpara
+   fimpara
+//    Fim para escrevendo a Cartela
+
+Fimalgoritmo

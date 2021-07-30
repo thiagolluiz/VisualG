@@ -1,0 +1,70 @@
+Algoritmo "carteia_de_investimentos"
+
+
+Var
+
+   cdb, acoes, imob, stock, reit, invest, fimdist: real
+
+Inicio
+   escreval("--- Tranqueira Investimentos ---")
+   escreval("Os valores mostrados a seguir são váriaveis que podem ser alteradas de acordo com o mercado financeiro")
+   escreval("1- CDB                 juros médio a.a: 5,25 (%),   tempo minimo de resgate: 1 ano(s),    risco: Baixo")
+   escreval("2- mercado de ações    juros médio a.a: 5.43 (%),   tempo minimo de resgate: 0 ano(s),    risco: Alto")
+   escreval("3- mercado imobiliario juros médio a.a: 6.22 (%),   tempo minimo de resgate: 5 ano(s),    risco: Baixo")
+   escreval("4- stock (EUA)         juros médio a.a: 10.20 (%),  tempo minimo de resgate: 0 ano(s),    risco: Altissimo")
+   escreval("5- reit (EUA)          juros médio a.a: 6.00 (%),   tempo minimo de resgate: 1 ano(s),    risco: Médio")
+   escreval("   ")
+   escreval("Se não quiser investeir em alguma das classes de investimentos digite '0'")
+   escreval("*** Os valores em REITs serão preenchidos com o que faltar para 100% ***")
+   escreval("   ")
+   escreva("Qual valor gostaria de investir: R$ ")
+   leia (invest)
+   escreval("   ")
+   // Aplicando o percentual a ser investido
+   repita
+   reit <- -1
+      enquanto reit < 0 faca
+         escreval("Qual a porcentagem do seu investimento gostaria de aplicar em:")
+         escreva("CDB: ")
+         leia (cdb)
+         escreva("Mercado de ações: ")
+         leia (acoes)
+         escreva("Mercado imobiliario: ")
+         leia (imob)
+         escreva("STOCK: ")
+         leia (stock)
+         escreval("   ")
+         reit <- 100 - cdb - acoes - imob - stock
+              se reit < 0 entao
+                 escreval("*** A distribuição foi feita incorretamente, preencha novamente: ***")
+                 escreval("*** Não se esqueça que os valores não podem ultrapassar 100% ***")
+                 escreval("   ")
+              fimse
+      fimenquanto
+      //mostrar as distribuição aos clietes
+      escreval("A distribuição do seu investimento: ")
+      escreval("CDB: ",cdb," %")
+      escreval("Mercado de ações: ",acoes," %")
+      escreval("Mercado imobiliario: ",imob," %")
+      escreval("STOCK: ",stock," %")
+      escreval("REIT: ",reit," %")
+      escreval("   ")
+      escreval("Podemos prosseguir: (digite: 1-sim ou 0-não) ")
+      leia(fimdist)
+      escreval("   ")
+   ate fimdist = 1
+   //mostrar a projeção esperada para os investimetos
+   escreval("A projeção de lucros para daqui 1 ano é:")
+   escreval("CDB: R$ ", invest * ( cdb / 100 )* 1.0525 )
+   escreval("Mercado de ações: R$ ", invest * ( acoes / 100 ) * 1.0543)
+   escreval("Mercado imobiliario: R$ ", invest * ( imob /100 ) * 1.0622)
+   escreval("STOCK: R$ ", invest * ( stock/ 100 ) * 1.102)
+   escreval("REIT: R$ ", invest * ( reit / 100 ) * 1.06)
+   escreval("   ")
+   escreval("Valor investido: ",invest)
+   escreval("Valor dos lucros: ", (invest * ((( cdb / 100 )* 1.0525 )+(( acoes / 100 ) * 1.0543)+((imob /100 ) * 1.0622)+(( stock/ 100 ) * 1.102)+(( reit / 100 ) * 1.06)))- invest:10:2)
+   escreval("   ")
+   escreval("OBS: como mencionado antes esses valores estão sujeitos a variações de acordo com o mercado em que se relacionam")
+   escreval("   ")
+
+Fimalgoritmo

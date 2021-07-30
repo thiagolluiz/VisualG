@@ -1,0 +1,126 @@
+Algoritmo "Eleicoes_Municipais"
+
+Var
+
+   eleitor, opcao, vereador, prefeito,  nulop, nulo: inteiro
+   joao, maria, ze, zureta, gomes: inteiro
+
+Inicio
+
+joao <- 0
+maria <- 0
+ze <- 0
+zureta <- 0
+gomes <- 0
+nulo <- 0
+eleitor <- 0
+
+escreval ("---Seja bem-vindo, vote com consciência---")
+
+repita
+   escreval ("Qual opção a seguir você deseja executar: ")
+   escreval ("1- Votar")
+   escreval ("2- Apuração dos votos:")
+   escreval ("3- Sair")
+   leia (opcao)
+
+   se opcao = 1 entao     // 1 - Votar
+      eleitor <- eleitor + 1
+
+      escreval (" ")     // Vereadores
+      escreval ("Os cadidatos a vereadores são:")
+      escreval (" ")
+      escreval ("111- João do frete")
+      escreval ("222- Maria da pamonha")
+      escreval ("333- Zé da farmácia")
+      escreval ("444- Nulo")
+      escreval (" ")
+      escreva ("Digite o número do candidato para vereador desejado:")
+      leia (vereador)
+           escolha vereador
+              caso 111
+                 joao <- joao + 1
+                 escreval ("Seu voto foi para 'João do frete'!")
+              caso 222
+                 maria <- maria + 1
+                 escreval ("Seu voto foi para 'Maria da pamohna'!")
+              caso 333
+                 ze <- ze + 1
+                 escreval ("Seu voto foi para 'Zé da Farmácia'!")
+              caso 444
+                 nulo <- nulo + 1
+                 escreval ("Seu voto foi 'Nulo'!")
+              outrocaso
+                 nulo <- nulo + 1
+                 escreval ("Seu voto foi 'Anulado'!")
+            fimescolha
+
+      escreval (" ")     // Prefeito
+      escreval ("Os cadidatos a prefeito são:")
+      escreval (" ")
+      escreval ("11- Dr.Zureta")
+      escreval ("22- Sr. Gomes")
+      escreval ("44- Nulo")
+      escreval (" ")
+      escreva ("Digite o número do candidato para prefeito desejado:")
+      leia (prefeito)
+           escolha prefeito
+                  caso 11
+                     zureta <- zureta + 1
+                     escreval ("Seu voto foi para 'Dr.Zureta'!")
+                  caso 22
+                     Gomes <- Gomes + 1
+                     escreval ("Seu voto foi para 'Sr. Gomes'!")
+                  caso 44
+                     nulop <- nulop + 1
+                     escreval ("Seu voto foi 'Nulo'!")
+                  outrocaso
+                       nulop <- nulop + 1
+                       escreval ("Seu voto foi 'Anulado'!")
+           fimescolha
+
+      escreval (" ")
+      escreval ("Eleitor numero: ", eleitor)
+      escreval ("Obrigado por cumprir o seu dever como cidadão!")
+      escreval (" ")
+   fimse
+
+   se opcao = 2 entao     // 2 - Apuração dos votos
+      escreval (" ")
+      escreval ("---Os votos para vereador são: ---")
+      escreval ("---Votos totais:", eleitor," ---")
+      escreval ("111- João do frete: ", joao)
+      escreval ("222- Maria da pamonha: ", maria)
+      escreval ("333- Zé da farmácia", ze)
+      escreval ("444- Nulo", nulo)
+      escreval (" ")
+      escreval ("---Os votos para prefeito são: ---")
+      escreval (" ")
+      escreval ("11- Dr.Zureta", zureta)
+      escreval ("22- Sr. Gomes", gomes)
+      escreval ("44- Nulo", nulop)
+      escreval (" ")
+   fimse
+ate opcao = 3
+
+   se opcao = 3 entao       // 3 - Fim das Eleições
+      escreval ("   Fim da apuração das urnas!   ")
+      escreval ("---Votos totais:", eleitor," ---")
+      escreval ("     ")
+      escreval ("---Os votos para vereador são: ---")
+      escreval ("111- João do frete: ", joao)
+      escreval ("222- Maria da pamonha: ", maria)
+      escreval ("333- Zé da farmácia", ze)
+      escreval ("444- Nulo", nulo)
+      escreval ("     ")
+      escreval ("---Os votos para prefeito são: ---")
+      escreval ("11- Dr.Zureta", zureta)
+      escreval ("22- Sr. Gomes", gomes)
+      escreval ("44- Nulo",nulop)
+      escreval ("     ")
+      escreval ("!!!Parabéns!!! Elegeram novamente o pior candidato!")
+      escreval ("     ")
+      escreval ("Vocês gostam de sofrer, néah?")
+   fimse
+
+Fimalgoritmo

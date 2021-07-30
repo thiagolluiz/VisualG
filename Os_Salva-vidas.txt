@@ -1,0 +1,31 @@
+Algoritmo "Os_Salva-Vidas"
+
+Var
+
+Zona, N, Z: inteiro
+Raio, Area: vetor [1..100] de real  //Não encontrei como deixar o número de vetores Linkado ao numero de variaveis (zonas).
+Mzona: real
+Inicio
+
+escreva ("Insira o número de zonas à serem vigiadas = ")
+leia (N)
+
+para Zona de 1 ate N faca
+     escreva ("Insira o raio em metros da Zona ",Zona," = ")
+     leia ( Raio [Zona] )
+          Area [Zona] <- (pi * (Raio [Zona] ^ 2))
+fimpara
+
+Mzona <- Area[Zona]
+
+para Zona de 1 ate N faca
+
+     se Area [Zona] < Mzona entao
+        Mzona <- Area [Zona]
+        Z <- Zona
+     fimse
+fimpara
+
+escreval ("A zona ",Z," precisa de Salva-vidas, sua área é de ", Mzona/1:5:2," metros ²." )
+
+Fimalgoritmo

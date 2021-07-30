@@ -1,0 +1,26 @@
+Algoritmo "Vendedores_e_Comissoes"
+
+Var
+   Nome: vetor [1..10] de caractere
+   Vendas: vetor [1..10,1..10]  de real
+   Comissao: vetor [1..10] de real
+   posicao : inteiro
+   posicaoB : inteiro
+
+Inicio
+
+para posicao de 1 ate 10 faca
+     escreval ("Nome do funcionário: ")
+     leia (Nome[posicao])
+          para posicaoB de 1 ate 2 faca
+               escreva ("Venda da semana ",posicaoB, "° do funcionário ", Nome [posicao], " : ")
+               leia (Vendas[posicao])
+          fimpara
+     Comissao [posicao]:=  (Vendas[posicaoB, 1] + Vendas[posicaoB, 2]) / 0.02
+fimpara
+
+para posicao de 1 ate 10 faca
+     escreval ("O funcionário ", Nome, " vendeu (", Vendas [ posicao, 1], "), (", Vendas [posicao, 2], ") e sua comissão é de (", Comissao[posicao], ")")
+
+
+Fimalgoritmo
